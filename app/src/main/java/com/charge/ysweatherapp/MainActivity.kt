@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                 date.text= response.getJSONObject("current").getString("last_updated")
                 humidity.text= response.getJSONObject("current").getString("humidity")+"%"
                 condition.text= response.getJSONObject("current").getJSONObject("condition").getString("text")
-                val icon = response.getJSONObject("current").getJSONObject("condition").getString("icon")
+                val icon = "https:"+response.getJSONObject("current").getJSONObject("condition").getString("icon")
                 Picasso.get().load(Uri.parse(icon)).placeholder(R.drawable.weather_forecast).into(image)
 
                 if (response.getJSONObject("current").getString("is_day")=="0"){
